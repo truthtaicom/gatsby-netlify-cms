@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 
-export const ProductPageTemplate = ({
+export const ServicePageTemplate = ({
   title
 }) => (
   <div className="content">
@@ -11,12 +11,12 @@ export const ProductPageTemplate = ({
 )
 
 
-const ProductPage = ({ data }) => {
+const ServicePage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
-
+  console.log(frontmatter)
   return (
     <Layout>
-      <ProductPageTemplate
+      <ServicePageTemplate
         title={frontmatter.title}
       />
     </Layout>
@@ -24,11 +24,11 @@ const ProductPage = ({ data }) => {
 }
 
 
-export default ProductPage
+export default ServicePage
 
-export const productPageQuery = graphql`
+export const servicesPageQuery = graphql`
   query ServicePage {
-    markdownRemark(frontmatter: {templateKey: {eq: "service-page"}}) {
+    markdownRemark(frontmatter: { templateKey: {eq: "service-page"}}) {
       frontmatter {
         title
         body {

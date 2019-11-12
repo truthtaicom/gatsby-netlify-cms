@@ -1,19 +1,14 @@
 import React from 'react'
-import { IndexPageTemplate } from '../../templates/index-page'
+import { ServicePageTemplate } from '../../templates/service-page'
 
 const ServicePagePreview = ({ entry, getAsset }) => {
   const data = entry.getIn(['data']).toJS()
+  console.log(entry, "data >>>")
 
   if (data) {
     return (
-      <IndexPageTemplate
-        image={data.image}
-        title={data.title}
-        heading={data.heading}
-        subheading={data.subheading}
-        description={data.description}
-        intro={data.intro || { blurbs: [] }}
-        mainpitch={data.mainpitch || {}}
+      <ServicePageTemplate
+        {...data}
       />
     )
   } else {

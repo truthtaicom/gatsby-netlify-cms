@@ -31,7 +31,31 @@ collections:
       - { label: "Featured Image", name: "featuredimage", widget: image }
       - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Tags", name: "tags", widget: "list" }
-
+ 
+  - name: "services"
+    label: "Services"
+    files:
+      - file: "src/pages/services/index.md"
+        label: "Services"
+        name: "services"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "service-page",
+            }
+          - { label: "Title", name: "title", widget: "string" }
+          - {
+              label: "Body",
+              name: "body",
+              widget: "list",
+              fields:
+                [
+                  { label: "Title", name: "title", widget: "string" },
+                  { label: "SubTitle", name: "subtitle", widget: "string" },
+                ]
+            }
   - name: "pages"
     label: "Pages"
     files:
@@ -77,27 +101,6 @@ collections:
                       ],
                   },
                 ],
-            }
-      - file: "src/pages/services/index.md"
-        label: "Services"
-        name: "services"
-        fields:
-          - {
-              label: "Template Key",
-              name: "templateKey",
-              widget: "hidden",
-              default: "service-page",
-            }
-          - { label: "Title", name: "title", widget: "string" }
-          - {
-              label: "Body",
-              name: "body",
-              widget: "list",
-              fields:
-                [
-                  { label: "Title", name: "title", widget: "string" },
-                  { label: "SubTitle", name: "subtitle", widget: "string" },
-                ]
             }
       - file: "src/pages/about/index.md"
         label: "About"
