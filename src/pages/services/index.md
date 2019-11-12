@@ -4,11 +4,9 @@ path: /services
 title: Services
 image: /img/jumbotron.jpg
 heading: Great Services
-body:
-  - title: "Service 1"
-    subtitle: "Service 123"
-  - title: "Service 2"
-    subtitle: "Service 1234"
-  - title: "Service 2"
-    subtitle: "Service 12345"
+content:
+  - title: Tich hop he thong
+    subtitle: SubTitle 1
+  - title: Giai phap y te
+    subtitle: SubTitle 2
 ---

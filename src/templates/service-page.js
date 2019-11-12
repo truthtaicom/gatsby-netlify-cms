@@ -3,10 +3,16 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 
 export const ServicePageTemplate = ({
-  title
+  title,
+  data
 }) => (
   <div className="content">
     {title}
+    {
+      data.map(elm => (
+        <p>{elm.title}</p>
+      ))
+    }
   </div>
 )
 
@@ -18,6 +24,7 @@ const ServicePage = ({ data }) => {
     <Layout>
       <ServicePageTemplate
         title={frontmatter.title}
+        data={frontmatter.body}
       />
     </Layout>
   )
